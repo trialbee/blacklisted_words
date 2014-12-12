@@ -3,7 +3,10 @@ class Word < ActiveRecord::Base
     blacklisted_words = []
     words = type.nil? ? all : where(word_type: type)
     words.each do |word|
-      blacklisted_words << word.word if string.include?(word.word)
+      blacklisted_words << {
+        type: word.word_type,
+        word: word.word,  
+      } if string.include?(word.word)
     end
     blacklisted_words
   end
