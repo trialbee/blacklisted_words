@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0.rc2'
+gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record
 gem 'mysql2', group: :development
 gem 'pg', group: :production
@@ -44,3 +43,5 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'unicorn'
+gem 'rack-timeout'
