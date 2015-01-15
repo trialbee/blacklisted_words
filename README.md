@@ -1,1 +1,1 @@
-## Blacklisted words for third pary ads
+## Blacklisted words for third party ads
