@@ -11,9 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212144435) do
+ActiveRecord::Schema.define(version: 20150302221435) do
 
-  create_table "words", force: true do |t|
+  create_table "passwords", force: :cascade do |t|
+    t.string   "value",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "passwords", ["value"], name: "index_passwords_on_value", using: :btree
+
+  create_table "words", force: :cascade do |t|
     t.string   "word",       limit: 255
     t.string   "word_type",  limit: 255
     t.datetime "created_at",             null: false
